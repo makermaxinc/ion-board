@@ -6,4 +6,6 @@ It is meant to accelerate your hands-on understanding of Lithium-ion cells and B
 
 Supports all cell chemistries with nominal voltage upto 5V.
 
+![MakerMax ION Board](https://makermax.ca/wp-content/uploads/2019/10/makermax-ion-1.jpg)
+
 Learn more at - https://makermax.ca/product/ion-board/
