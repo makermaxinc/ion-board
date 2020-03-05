@@ -89,8 +89,8 @@ Wire.requestFrom(address, (uint8_t)1);
   
   // put your setup code here, to run once:
 
-pinMode(7, INPUT_PULLUP); //SW1 is D7
-pinMode(8, INPUT_PULLUP); //SW2 is D8
+pinMode(2, INPUT_PULLUP); //SW1 is D2 for REV 1.3 and D7 for REV 1.2
+pinMode(3, INPUT_PULLUP); //SW2 is D3 for REV 1.3 and D8 for REV 1.2
 }
 
 
@@ -107,7 +107,7 @@ float temp=0;
 void loop() {
 dac.wake();
 
-buttonWait(7,8);    //This enables mode control using - SW1 connected to D7 and SW2 connected to D8
+buttonWait(2,3);    //This enables mode control using - SW1 connected to D7 and SW2 connected to D8
 
 voltage=readvoltage();
  //If under-voltage, reset to idle state
