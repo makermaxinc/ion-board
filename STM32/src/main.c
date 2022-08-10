@@ -150,27 +150,10 @@ int main(void)
   	ssd1306_UpdateScreen();
 
   	//DAC code
-  	MCP47FEB_TypeDef mcp;
-  	MCP47FEB_Init(&mcp, 0x60, &hi2c1);
-  	MCP47FEB_SetVref(&mcp, 0, 0);
-  	MCP47FEB_SetGain(&mcp, 0, 0);
-  	MCP47FEB_SetPowerDown(&mcp, 1, 1);
-
-  	HAL_Delay(1000);
-
-	MCP47FEB_AnalogWrite(&mcp, 0x0, 0x0);
-	MCP47FEB_EEPROMWrite(&mcp);
-
-	//vaklue0 = MCP47FEB_GetValue(&mcp,0);
-	//vaklue1 = MCP47FEB_GetValue(&mcp,1);
-
 	HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_2, DAC_ALIGN_8B_R, 0);
 	HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, 0);
 	HAL_DAC_Start(&hdac1, DAC_CHANNEL_2);
 	HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
-
-  	//HAL_DAC_Stop(&hdac1, DAC_CHANNEL_1);
-  	//HAL_DAC_Stop(&hdac1, DAC_CHANNEL_2);
 
     // ADC code
     mcp342x_return_code_t ret = MCP342x_RET_OK;
